@@ -1,0 +1,7 @@
+Debug/
+.vd/
+**/libs/
+**/Debug/
+bin/
+
+*.dll

@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\fonts">
+      <UniqueIdentifier>{0ed554b6-9c63-4f5e-91da-fd4f03e9ea48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\res">
+      <UniqueIdentifier>{4645755d-b592-4570-aabb-07fd8e149996}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="includes\AssetManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Definitions.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\Game.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\GameOverState.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\GameState.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\InputManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\MainMenuState.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\PauseState.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\SplashState.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\State.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\StateMachine.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AssetManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameOverState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MainMenuState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PauseState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SplashState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\res\.gitkeep">
+      <Filter>Resource Files\res</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\res\achievements.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\game_title.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\grid.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\home_button.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\main_menu_background.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\o.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\o_win.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\pause_background.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\pause_button.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\pause_window.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\play_button.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\play_button_outer.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\resume_button.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\retry_button.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\sound_off.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\sound_on.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\splash_background.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\x.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+    <Image Include="resources\res\x_win.png">
+      <Filter>Resource Files\res</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\fonts\arial.ttf">
+      <Filter>Resource Files\fonts</Filter>
+    </Font>
+    <Font Include="resources\fonts\Marker Felt.ttf">
+      <Filter>Resource Files\fonts</Filter>
+    </Font>
+  </ItemGroup>
+</Project>
