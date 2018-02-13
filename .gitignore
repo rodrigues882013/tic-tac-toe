@@ -1,7 +1,13 @@
 Debug/
-.vd/
+
+.vs/
+
 **/libs/
+
 **/Debug/
+
 bin/
 
+
 *.dll
+tic-tac-toe.vcxproj.*
