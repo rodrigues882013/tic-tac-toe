@@ -2,6 +2,7 @@
 
 #include "State.hpp"
 #include "Game.hpp"
+#include "AI.hpp"
 
 namespace game
 {
@@ -23,11 +24,13 @@ namespace game
 
 
     private:
-		void check_and_place_piece();
+        void check_and_place_piece();
         void init_grid_piece();
-		void init_grid_array();
+        void init_grid_array();
         void load_texture();
         void set_positions();
+        void check_player_has_won(int);
+        void check_align_pieces_match(int, int, int, int, int, int, int);
 
 
         GameDataRef _data;
@@ -39,6 +42,8 @@ namespace game
         int grid_array[3][3];
         int turn;
         int game_state;
+        AI *ai;
+        sf::Clock _clock;
 
 
         void pause();
