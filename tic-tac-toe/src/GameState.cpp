@@ -1,8 +1,8 @@
 #include <iostream>
 #include <utility>
-#include "GameState.hpp"
-#include "Definitions.hpp"
-#include "PauseState.hpp"
+#include "../includes/GameState.hpp"
+#include "../includes/Definitions.hpp"
+#include "../includes/PauseState.hpp"
 
 namespace game
 {

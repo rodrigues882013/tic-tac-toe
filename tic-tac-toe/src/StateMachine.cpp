@@ -1,4 +1,4 @@
-#include "StateMachine.hpp"
+#include "../includes/StateMachine.hpp"
 
 namespace game
 {

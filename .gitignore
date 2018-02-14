@@ -16,3 +16,5 @@ tic-tac-toe.vcxproj.*
 .idea/
 
 *.iml
+
+**/cmake-build-debug/

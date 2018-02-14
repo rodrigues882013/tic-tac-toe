@@ -1,7 +1,7 @@
-#include "GameOverState.hpp"
-#include "Definitions.hpp"
-#include "MainMenuState.hpp"
-#include "GameState.hpp"
+#include "../includes/GameOverState.hpp"
+#include "../includes/Definitions.hpp"
+#include "../includes/MainMenuState.hpp"
+#include "../includes/GameState.hpp"
 #include <iostream>
 
 namespace game

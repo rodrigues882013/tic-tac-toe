@@ -1,9 +1,9 @@
 #include <utility>
 #include <iostream>
 
-#include "PauseState.hpp"
-#include "Definitions.hpp"
-#include "MainMenuState.hpp"
+#include "../includes/PauseState.hpp"
+#include "../includes/Definitions.hpp"
+#include "../includes/MainMenuState.hpp"
 
 namespace game
 {

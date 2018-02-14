@@ -1,5 +1,5 @@
 
-#include "InputManager.hpp"
+#include "../includes/InputManager.hpp"
 
 namespace game
 {

@@ -1,8 +1,7 @@
 
-#include <SFML\Graphics.hpp>
-#include <iostream>
-#include "Game.hpp"
-#include "Definitions.hpp"
+#include <SFML/Graphics.hpp>
+#include "../includes/Game.hpp"
+#include "../includes/Definitions.hpp"
 
 
 int main(char* args)

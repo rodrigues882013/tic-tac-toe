@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "AssetManager.hpp"
+#include "../includes/AssetManager.hpp"
 
 namespace game
 {
