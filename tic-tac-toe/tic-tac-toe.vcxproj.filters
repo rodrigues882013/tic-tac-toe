@@ -54,6 +54,9 @@
     <ClInclude Include="includes\StateMachine.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="includes\AI.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AssetManager.cpp">
@@ -84,6 +87,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

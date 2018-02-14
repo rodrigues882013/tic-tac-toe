@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="includes\AI.hpp" />
     <ClInclude Include="includes\AssetManager.hpp" />
     <ClInclude Include="includes\Definitions.hpp" />
     <ClInclude Include="includes\Game.hpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="includes\StateMachine.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\AI.cpp" />
     <ClCompile Include="src\AssetManager.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameOverState.cpp" />

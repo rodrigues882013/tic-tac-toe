@@ -22,6 +22,8 @@ namespace game
 		game_state = Constants::STATE_PLAYING;
 		turn = Constants::PLAYER_PIECE;
 
+		this->ai = new AI(turn, this->_data);
+
 		load_texture();
 		set_positions();
 		init_grid_piece();
@@ -45,7 +47,11 @@ namespace game
 			}
 			else if (this->_data->inputs.is_sprite_clicked(this->_grid, sf::Mouse::Left, this->_data->window))
 			{
-				this->check_and_place_piece();
+				if (Constants::STATE_PLAYING == game_state)
+				{
+					this->check_and_place_piece();
+				}
+				
 			}
 		}
 	}
@@ -131,13 +137,15 @@ namespace game
 			if (Constants::PLAYER_PIECE == turn)
 			{
 				_grid_pieces[column - 1][row - 1].setTexture(this->_data->assets.get_texture("X Piece"));	
-				turn = Constants::AI_PIECE;
+				this->check_player_has_won(turn);
+				//turn = Constants::AI_PIECE;
 			}
-			else if (Constants::AI_PIECE == turn)
+			/*else if (Constants::AI_PIECE == turn)
 			{
 				_grid_pieces[column - 1][row - 1].setTexture(this->_data->assets.get_texture("O Piece"));
+				this->check_player_has_won(turn);
 				turn = Constants::PLAYER_PIECE;
-			}
+			}*/
 
 			_grid_pieces[column - 1][row - 1].setColor(sf::Color(255, 255, 255, 255));
 		}
@@ -181,6 +189,9 @@ namespace game
 		this->_data->assets.load_texture("X Piece", Constants::X_PIECE_FILEPATH);
 		this->_data->assets.load_texture("O Piece", Constants::O_PIECE_FILEPATH);
 
+		this->_data->assets.load_texture("X Piece Won", Constants::X_WINING_PIECE_FILEPATH);
+		this->_data->assets.load_texture("O Piece Won", Constants::O_WINING_PIECE_FILEPATH);
+
 
 		_background.setTexture(this->_data->assets.get_texture("Background"));
 		_pause_button.setTexture(this->_data->assets.get_texture("Pause Button"));
@@ -194,5 +205,76 @@ namespace game
 
 		_grid.setPosition((Constants::WINDOW_WIDTH / 2) - (_grid.getGlobalBounds().width / 2),
 			(Constants::WINDOW_HEIGHT / 2) - (_grid.getGlobalBounds().height / 2));
+	}
+
+	void GameState::check_player_has_won(int player)
+	{
+		check_align_pieces_match(0, 0, 1, 0, 2, 0, player);
+		check_align_pieces_match(0, 1, 1, 1, 2, 1, player);
+		check_align_pieces_match(0, 2, 1, 2, 2, 2, player);
+		check_align_pieces_match(0, 0, 0, 1, 0, 2, player);
+		check_align_pieces_match(1, 0, 1, 1, 1, 2, player);
+		check_align_pieces_match(2, 0, 2, 1, 2, 2, player);
+		check_align_pieces_match(0, 0, 1, 1, 2, 2, player);
+		check_align_pieces_match(0, 2, 1, 1, 2, 0, player);
+
+		if (Constants::STATE_WON != game_state)
+		{
+			game_state = Constants::STATE_AI_PLAYING;
+			ai->place_piece(&grid_array, _grid_pieces, &game_state);
+
+			check_align_pieces_match(0, 0, 1, 0, 2, 0, Constants::AI_PIECE);
+			check_align_pieces_match(0, 1, 1, 1, 2, 1, Constants::AI_PIECE);
+			check_align_pieces_match(0, 2, 1, 2, 2, 2, Constants::AI_PIECE);
+			check_align_pieces_match(0, 0, 0, 1, 0, 2, Constants::AI_PIECE);
+			check_align_pieces_match(1, 0, 1, 1, 1, 2, Constants::AI_PIECE);
+			check_align_pieces_match(2, 0, 2, 1, 2, 2, Constants::AI_PIECE);
+			check_align_pieces_match(0, 0, 1, 1, 2, 2, Constants::AI_PIECE);
+			check_align_pieces_match(0, 2, 1, 1, 2, 0, Constants::AI_PIECE);
+		}
+
+		int empty_num = 9;
+
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				if (Constants::EMPTY_PIECE != grid_array[i][j])
+				{
+					empty_num--;
+				}
+			}
+		}
+
+		if (empty_num == 0 && (Constants::STATE_WON != game_state) && (Constants::STATE_LOSE != game_state))
+		{
+			game_state = Constants::STATE_DRAW;
+		}
+
+		if (game_state == Constants::STATE_DRAW || game_state == Constants::STATE_LOSE || game_state == Constants::STATE_WON);
+		{
+			//Show gameover
+		}
+
+		std::cout << game_state << std::endl;
+	}
+
+	void GameState::check_align_pieces_match(int x1, int y1, int x2, int y2, int x3, int y3, int piece_to_check)
+	{ 
+		
+		if (piece_to_check == grid_array[x1][y1] &&
+			piece_to_check == grid_array[x2][y2] &&
+			piece_to_check == grid_array[x3][y3])
+		{
+			std::string piece_win = Constants::O_PIECE == piece_to_check ? "O Piece Won" : "X Piece Won";
+			_grid_pieces[x1][y1].setTexture(this->_data->assets.get_texture(piece_win));
+			_grid_pieces[x2][y2].setTexture(this->_data->assets.get_texture(piece_win));
+			_grid_pieces[x3][y3].setTexture(this->_data->assets.get_texture(piece_win));
+
+			game_state = Constants::PLAYER_PIECE == piece_to_check ? Constants::STATE_WON : Constants::STATE_LOSE;
+
+		}
+		
+
 	}
 }

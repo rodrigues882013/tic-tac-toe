@@ -15,6 +15,7 @@ namespace game
         static const int EMPTY_PIECE = -1;
         static const int PLAYER_PIECE = X_PIECE;
         static const int AI_PIECE = O_PIECE;
+		static const int TIME_BEFORE_SHOWING_GAME_OVER = O_PIECE;
 
         static constexpr float SPLASH_STATE_SHOW_TIME = 0.5f;
 
@@ -50,13 +51,6 @@ namespace game
         static const unsigned int STATE_DRAW = 93;
 
         static constexpr const char* GRID_SPRITE_FILE_PATH = "resources/res/grid.png";
-
-
-
-
-
-
-
 
     };
 
