@@ -12,3 +12,7 @@ bin/
 
 *.dll
 tic-tac-toe.vcxproj.*
+
+.idea/
+
+*.iml
